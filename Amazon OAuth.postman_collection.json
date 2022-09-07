@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "e31f03d9-0a60-49d7-95da-c894f2e7038a",
+		"name": "Amazon OAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13181260"
+	},
+	"item": [
+		{
+			"name": "Auth authorization_code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "charset",
+						"value": "UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "RHqaYWEYZDgSxrtWwFSL",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://uygulama.birfatura.com/dashboard",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "amzn1.application-oa2-client.484f699e4b6c4eb2b563350d80f27c6a",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "fbc9619b229e761c132dca9376935c9e04964cd5667058dbfd88f98eef6768a3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.amazon.com/auth/O2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"auth",
+						"O2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Refresh Token",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "sessionToken",
+							"value": "FwoGZXIvYXdzEJr//////////wEaDHRurd+qGKWKB73lriLIAaGuzx3pICkPX9nAMulv1O65m1761CQrcZVP0g2xsmm97sjZMZqZcBMg5HUss7tbC23i8NhhDB7fAUfslOWgLOTDxte0HVU1jiyz5EU+V2C7Rybgm9FFHtHbnUi7UQFQVxLXmnli8aku6SpS70cbKJ2n/sdtfMZGW8xZ7gmxsMiivv3h22Z5ZPY7jACkmS8UCMBwsYc0JwVA2JaY5ucQ6TZsYYqmB5ClsoLGvFZAryblNE57RykRxyI7pblynr7khsFRnGUII2N/KPDCiZMGMi3GyoXUa/Dmpih2TVqqrAp3ftXm7YaJYm8Icnz9x8fCxqc7Mh2HRc5jc0cgqf8=",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "0nkm2xha9Wb2cc+WjNxqa2X2Qydnjw/tzST3PSAn",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "ASIAUZOAEZXR7JULGDFY",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "region",
+							"value": "eu-west-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "Atzr|IwEBIO9aGYgQsCWRYNLT68pnoqvKumF4pPd3wNNL-iXsjoeahRzT2uvG6JOWHGSbrHed-v0DP_BfVt4KbgUk_lMjNezyMygLQ5YkUwlQOZ03GWA2JxaSF8LYpnCbpNHS4aEONcJugDPLEtlbvVpxhnVSGXRR2HXUthBAxclZ4we86ssSX3ZXMVsx00-o-nQtO1zcYMqXDlZkygRZLD3jq-6_1djU0jZb6EeTeEL94CR0Hgbe8qHLWU_5Yv6EWbeKVu-XkKTxeX4RB30kzHEQ6XX2lH4fYLAlULoRENYvpr0Y8n74Wb0CKBS1MSWUVbJFjHAUjw8",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "amzn1.application-oa2-client.484f699e4b6c4eb2b563350d80f27c6a",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "fbc9619b229e761c132dca9376935c9e04964cd5667058dbfd88f98eef6768a3",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "appstore::apps:readwrite",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.amazon.com/auth/O2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"auth",
+						"O2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization API",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "sessionToken",
+							"value": "FwoGZXIvYXdzEPH//////////wEaDBcMyb/bi1uwsPDHtSLIATeaLpqlXwpy5EAE/bLS30BBzfLJ+fDqyESLDhMo1OScV8Bn0GYfIEpj3X6obVx5irlopsnTL2uTo21sW/uL8QqpLbYaCbqA6RNuaAxe929l0C1w7RYOvjmupSKiBdUERrJTt58BoKsc5aO7/7NangYrBqCeJyFbk12JCkr52+XwJFoiUFRTy4FflG7USjRUALdsLbKNM0eDufx5aU3RV5+YfSiwJgq0ukDd/H3QTBMX3gY0GIxeE9nYX0Up3Rz2RtrS9KzLxqG2KMv574oGMi2F0yNZBCAf5kdymNSFGUufNUXcr+xbOVHpdcj+WAZ3JoKGtmmeUynOhtVRNU4=",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "wGUi4HhjB8Z8K/ibM8H4WffPss4o6s2QhM0wacWM",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "ASIAUZOAEZXRRV3LQH5K",
+							"type": "string"
+						},
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "eu-west-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-amz-access-token",
+						"value": "Atc|MQEBIP4pRgPC2a3ip_cdLQCwrirOixs6cFY_uDqqFGfrBlgyFua3g0QbCuCAIZNo89FvgCbW2WBC7A0r08DRRHrEXHjyQPA0KuzFyMYFHnUTgxDVVCq5HHRSuK8DrURKWtwtZyGvwzmyORn-PFw8XC-wJYkFDUrgh80RaK1SMr8FdMEqku2MOnLpR1rAXVYxqGVmEmQyQTidBWazJGxLzwmROEV_8hLLsZ9S7xbzRkpz1vgf61zhF1EIz_qk9CL-z80c65tB0x0jA-IaLRcbcPswsZGQ",
+						"type": "text"
+					},
+					{
+						"key": "x-amzn-RequestId",
+						"value": "6A3297FB-BE05-45D6-AB0F-422317AD4660",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sellingpartnerapi-eu.amazon.com/authorization/v1/authorizationCode?sellingPartnerId=A21BO88WRVB03F&developerId=484822091639&mwsAuthToken=amzn.mws.fabe15b3-5ced-45cc-e12b-0c9596e54238",
+					"protocol": "https",
+					"host": [
+						"sellingpartnerapi-eu",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"authorization",
+						"v1",
+						"authorizationCode"
+					],
+					"query": [
+						{
+							"key": "sellingPartnerId",
+							"value": "A21BO88WRVB03F"
+						},
+						{
+							"key": "developerId",
+							"value": "484822091639"
+						},
+						{
+							"key": "mwsAuthToken",
+							"value": "amzn.mws.fabe15b3-5ced-45cc-e12b-0c9596e54238"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth client_credentials",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "Atzr|IwEBIOeMcWbJs-p0dbZd9MDdfipU-6yW2f1g4YIy9nnzlAVIf-hP0LAcQHkfaJhkiHRVRtA9DCXq1Vptf0kYfbjFueW9W4NvjOYzG2dgzpKTO_vy1jBeM1v52wP3nPoe_QAhSeB_F6BIUFhBmZB9In6ntJLDBwyrKlSQ_qAnDzb_rRW9NqDEngZ3Fta3p2edneQdQfURfAqzXXhoWxdxXz08nv0uPHp_xIZn4JuPapcmf8Yp7J9jPl8fF1kd3lO_6Ss35o86a48ctfhaOzjiqa64YmGgpCTqykMM3wfHimsD-CruBwGWe0eFiMsIu4d-0a-ye3E",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "amzn1.application-oa2-client.c70e6b4a55104a2283d564ea7403878c",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "d22a027996ae7a5a46459160b71ee15e665cfc5a244c38dca334b69b44e5469a",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "sellingpartnerapi::notifications sellingpartnerapi::migration",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.amazon.com/auth/O2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"auth",
+						"O2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token Info",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "secretKey",
+							"value": "0nkm2xha9Wb2cc+WjNxqa2X2Qydnjw/tzST3PSAn",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "FwoGZXIvYXdzEJr//////////wEaDHRurd+qGKWKB73lriLIAaGuzx3pICkPX9nAMulv1O65m1761CQrcZVP0g2xsmm97sjZMZqZcBMg5HUss7tbC23i8NhhDB7fAUfslOWgLOTDxte0HVU1jiyz5EU+V2C7Rybgm9FFHtHbnUi7UQFQVxLXmnli8aku6SpS70cbKJ2n/sdtfMZGW8xZ7gmxsMiivv3h22Z5ZPY7jACkmS8UCMBwsYc0JwVA2JaY5ucQ6TZsYYqmB5ClsoLGvFZAryblNE57RykRxyI7pblynr7khsFRnGUII2N/KPDCiZMGMi3GyoXUa/Dmpih2TVqqrAp3ftXm7YaJYm8Icnz9x8fCxqc7Mh2HRc5jc0cgqf8=",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "ASIAUZOAEZXR7JULGDFY",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "region",
+							"value": "eu-west-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-amz-access-token",
+						"value": "Atza|IwEBINhmy4gr7Zy209D4X8C54LG88UHjZDvlh_xYU2Jvqtv-wY-SaTdhHNbkf6KpqkcNRlObuHWEJMfXoB93XTgflw2wP4sBXmV7cS63iYKL7ZWrbMpnKMVD9C6efPK2jBBt3BP_rxUm7GC0t0uduOg0v4Drsvm-50pmiouhhjvEecu6mcjK5J7o-QYTg7ZiUfFoi1muSSD0wrhM9EcszvittmNUS9pRWkvp9ItkV9aBucKZzjwRcPNNVZZnRFfDSZOFfAHCj0_ahpPkjSVXBl8VbDWKE3vuZy7esIXR1hg-Yuy5UnqxRLf3zFW_awEBjOVpJOIOgsv1642X78x0QNvg3--5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"restrictedResources\": [\r\n    {\r\n      \"method\": \"GET\",\r\n      \"path\": \"/orders/v0/orders\",\r\n      \"dataElements\": [\"buyerInfo\", \"shippingAddress\"]\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sellingpartnerapi-eu.amazon.com/tokens/2021-03-01/restrictedDataToken",
+					"protocol": "https",
+					"host": [
+						"sellingpartnerapi-eu",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"2021-03-01",
+						"restrictedDataToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Token For Seller",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "Atzr|IwEBIF_QV7iCGyWT2MwBxOaYe2wbbC3wdkt5popPgJ1LBFpWV5adzer3-1l_LV_5LKaYEpKLeGpCFI6JHOjGP-ThAiRk4_Vjuy3Z9b7qUsjBHwcnrdvSpt8CA3FFboTV07FrnPPo70L1Hfr7udoSVi13jbobT_Q59F_q6vMkMYtg-eeetJxngd79A7r61iSAAUCWOH9FPczlKcpkKMZ6KtJBWoCi-gvCt7Xy2Jo-9IqPJckOCJo-aVQOh7gyyXnwt44hjm0mgzxaX3I2sRy6PyyEAxxamTOqkNun9I1IwjU-wttOTJhk5OLbSfb0TctiSdEclio",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "client_id",
+							"value": "amzn1.application-oa2-client.484f699e4b6c4eb2b563350d80f27c6a",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "fbc9619b229e761c132dca9376935c9e04964cd5667058dbfd88f98eef6768a3",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "sellingpartnerapi::migration",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.amazon.com/auth/O2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"auth",
+						"O2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization API",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "accessKey",
+							"value": "ASIAUZOAEZXRQE3KTQHN",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "So8xKf36M8rmYnI+d+orf24MGi0QkXdSoF6O4LmG",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "FwoGZXIvYXdzEPr//////////wEaDAc1l4NoXdseUtisIyLIAQrS/Jn9Y1fsdhRn3foA/o3baSMiphYKncUKlmJMcCEJMGJFMi7hf2zXAfedTJRDVYCqJxjm9P565JQ9V6dpavsfQNnClSG0SrHp8aS/TqBVNLb0upa5Bz0eCi43SuFHGD+OOZamPJ4TGzRJ+pzVQu+FwCbh6ysabw4JbkxuFS/ceviQ4lp0bLCCaSOvBO+pFPkxAHqV+ciVpWtvLJ8ux6UanjLHrcg4x1nt4vC1CKK+pgtDcwhk2DkY3w3JEbWU3rZDNwR29HDUKLXinpMGMi3nN70g//S+gTx/rKRUG2FJGYA9Gfas22s9rCgIgo/aDRazagfWf1/2H5LrOjE=",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "region",
+							"value": "eu-west-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sellingpartnerapi-eu.amazon.com/authorization/v1/authorizationCode?sellingPartnerId=A3JSTUD0O435MP&developerId=484822091639&mwsAuthToken=amzn.mws.42ba7c7d-3116-f8e3-7ab3-752c072c6a0c",
+					"protocol": "https",
+					"host": [
+						"sellingpartnerapi-eu",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"authorization",
+						"v1",
+						"authorizationCode"
+					],
+					"query": [
+						{
+							"key": "sellingPartnerId",
+							"value": "A3JSTUD0O435MP"
+						},
+						{
+							"key": "developerId",
+							"value": "484822091639"
+						},
+						{
+							"key": "mwsAuthToken",
+							"value": "amzn.mws.42ba7c7d-3116-f8e3-7ab3-752c072c6a0c"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
